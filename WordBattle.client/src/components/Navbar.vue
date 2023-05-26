@@ -31,7 +31,7 @@
             :to="{ name: 'Test' }"
             class="btn text-success lighten-30 selectable text-uppercase"
           >
-            About
+            Test
           </router-link>
         </li>
 

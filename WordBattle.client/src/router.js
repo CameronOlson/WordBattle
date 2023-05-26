@@ -24,9 +24,9 @@ const routes = [
   },
   {
     path: '/testpage',
-    name: 'TestPage',
+    name: 'Test',
     component: loadPage('TestPage'),
-    beforeEnter: authGuard
+    // beforeEnter: authGuard
   }
 ]
 
