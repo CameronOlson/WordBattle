@@ -7,11 +7,24 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { AppState } from '../AppState'
+import { gamesService } from '../services/GamesService.js'
+import { logger } from '../utils/Logger.js'
+import Pop from '../utils/Pop.js'
 export default {
-  name: 'Account',
   setup() {
+    async function getGameById() {
+      try {
+        await gamesService.getGameById()
+      } catch (error) {
+        logger.error(error)
+        Pop.error(error.message)
+      }
+    }
+    onMounted(() => {
+      getGameById()
+    })
     return {
       account: computed(() => AppState.account)
     }
