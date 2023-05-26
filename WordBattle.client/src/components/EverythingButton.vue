@@ -1,30 +1,41 @@
 <template>
+  <div class="d-grid gap-3 btn-large everythingButton">
+    <button class="btn btn-primary" type="button">{{ title }}</button>
+    <button class="btn btn-primary" type="button">{{ notification }}</button>
+  </div>
 </template>
 
 <script>
 export default {
-  setup() {
+  props: {
+    id: String,
+    title: String,
+    page: String,
+    picture: String,
+    notification: String
+  },
+  setup(props) {
     return {};
   },
 };
 </script>
 
 <style scoped>
-a:hover {
-  text-decoration: none;
-}
-.nav-link {
-  text-transform: uppercase;
-}
-.navbar-nav .router-link-exact-active {
-  border-bottom: 2px solid var(--bs-success);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
+ .everythingButton {
+  margin: 20px 20px;
+  min-height: 20vh;
+  border-radius: 50%;
+ }
 
-/* .everythingButton {}
+ .Home {  
+  margin: 20px 20px;
+  min-height: 20vh;
+  border-radius: 50%;
+ }
 
-.homePage {
+
+
+/*.homePage {
   border: none;
 }
 
